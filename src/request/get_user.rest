@@ -1,0 +1,12 @@
+GET http://localhost:3001/api/user/manager HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNDgxOTE1LCJleHAiOjE3NDI0ODU1MTV9.1-Gn5b3BfJOeLHuqm14sCY8uKWx1z_rPOA7XYR-2TZo
+
+###
+
+GET http://localhost:3001/api/user/admin HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNDgxOTE1LCJleHAiOjE3NDI0ODU1MTV9.1-Gn5b3BfJOeLHuqm14sCY8uKWx1z_rPOA7XYR-2TZo
+
+
+###
+GET http://localhost:3001/api/user/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNDgxOTE1LCJleHAiOjE3NDI0ODU1MTV9.1-Gn5b3BfJOeLHuqm14sCY8uKWx1z_rPOA7XYR-2TZo

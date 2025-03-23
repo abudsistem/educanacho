@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/user/save-coment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNDk4MDYxLCJleHAiOjE3NDI1MDE2NjF9.4cly4gKHqbK0QNdqXwO3mP8wasmeVxFuxItstYsFsfU
+Content-Type: application/json
+
+{
+    "comentId": "67dc3520df39e8b7f33db629"
+}

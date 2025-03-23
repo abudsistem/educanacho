@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/coments/edit/67e058c8ae4b1cd605eb7dec HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNzU3MDkwLCJleHAiOjE3NDI3NjA2OTB9.heT-IY5LJ2cq1YcJ9hcQxlglarK2IMVchMHGm4a3g50
+Content-Type: application/json
+
+{
+  "content": "Nuevo contenido del comentario actualizado mediante put "
+}

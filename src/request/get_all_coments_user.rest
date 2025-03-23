@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/coments/usercoments HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGMyOWUyZTRiZDI0Zjc2NzMyMjAxMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNzQzNTU4LCJleHAiOjE3NDI3NDcxNTh9.bNt0oaRn8e7jgzK02zMzcPZo6iJ0MZVNq75jC0fxnFc
