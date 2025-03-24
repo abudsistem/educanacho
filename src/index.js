@@ -27,7 +27,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/coments', comentRoutes);
 //Server
-const PORT = process.env.REACT_APP_API_URL || 3002;
+const PORT = 'https://educanacho.onrender.com/';
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
