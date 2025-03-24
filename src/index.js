@@ -4,35 +4,25 @@ const dotenv = require('dotenv').config();
 const dbConnect = require('./config/dbConnect');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
-//coments
 const comentRoutes = require('./routes/comentRoutes');
 
 dbConnect();
 
 const app = express();
 
-//Middleware CORS
-app.use(cors( /*{
-    origin: 'http://localhost:5173', // Dirección del frontend (Vite)
-    credentials: true, // Permitir cookies o encabezados de autorización
-}*/));
-
-app.use(express.static('dist'))
-
-//middleware
+app.use(cors());
+app.use(express.static('dist'));
 app.use(express.json());
 
-//Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/coments', comentRoutes);
-//Server
-const PORT = 'https://educanacho.onrender.com/';
 
-app.listen(PORT, () => { // Corrected line: listen on the port variable
-    console.log(`PORT: ${port}`);
+const PORT = process.env.PORT || 3001; // Línea corregida
+
+app.listen(PORT, () => {
+    console.log(`PORT: ${PORT}`);
     console.log(`JSON_WEB_TOKEN_SECRET: ${process.env.JSON_WEB_TOKEN_SECRET}`);
     console.log(`MONGO_URI: ${process.env.MONGO_URI}`);
     console.log('Server is running');
-  });
-
+});
