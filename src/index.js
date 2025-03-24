@@ -28,7 +28,11 @@ app.use('/api/user', userRoutes);
 app.use('/api/coments', comentRoutes);
 //Server
 const PORT = 'https://educanacho.onrender.com/';
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+
+app.listen(PORT, () => { // Corrected line: listen on the port variable
+    console.log(`PORT: ${port}`);
+    console.log(`JSON_WEB_TOKEN_SECRET: ${process.env.JSON_WEB_TOKEN_SECRET}`);
+    console.log(`MONGO_URI: ${process.env.MONGO_URI}`);
+    console.log('Server is running');
+  });
 
