@@ -6,8 +6,9 @@ const {getAllUserComents} = require('../controllers/allComentsUserController');
 const {putFindAndUpdateComent} = require('../controllers/findAndUpdateComentController')
 const router = express.Router();
 
+const authorizeRoles = require('../middlewares/roleMiddleware');
 // Ruta para crear un tweet (protegida con verifyToken)
-router.post('/create', verifyToken, createComent);
+router.post('/create', verifyToken,authorizeRoles("manager","admin"), createComent);
 
 router.get('/all',getAllComents);
 

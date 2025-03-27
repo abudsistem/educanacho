@@ -18,7 +18,7 @@ router.get('/user',verifyToken,authorizeRoles("user","manager","admin"), (req, r
     res.json({message:'Welcome user'});
 })
 
-router.post('/save-coment', verifyToken, saveComent,(req, res) => {
+router.post('/save-coment', verifyToken,authorizeRoles("manager","admin"), saveComent,(req, res) => {
     res.json({message:'nota guarda'});
 })
 module.exports = router;
