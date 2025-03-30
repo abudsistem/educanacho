@@ -26,8 +26,7 @@ const verifyToken = (req, res, next) => {
             return res.status(400).json({ message: "Invalid token" });
         }
     }else{
-        return 
-        res.status(401).json({ message: "No token, authorization denied" });
+        return res.status(401).json({ message: "No token, authorization denied" });
     }
 }
 module.exports = verifyToken;

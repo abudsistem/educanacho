@@ -1,22 +1,48 @@
-const express = require('express');
-const { createComent } = require('../controllers/comentController');
+
+/*const express = require('express');
+const { createComent, getAllComents, getAllUserComents, putFindAndUpdateComent, deleteComent } = require('../controllers/comentController'); // Usa un solo archivo para los controladores
 const verifyToken = require('../middlewares/authMiddleware');
-const {getAllComents} = require('../controllers/allComentsController');
-const {getAllUserComents} = require('../controllers/allComentsUserController');
-const {putFindAndUpdateComent} = require('../controllers/findAndUpdateComentController')
-const {deleteComent} = require('../controllers/deleteComentController')
+const authorizeRoles = require('../middlewares/roleMiddleware');
 const router = express.Router();
 
-const authorizeRoles = require('../middlewares/roleMiddleware');
-// Ruta para crear un tweet (protegida con verifyToken)
-router.post('/create', verifyToken,authorizeRoles("manager","admin"), createComent);
+// Ruta para crear un comentario (protegida con verifyToken y authorizeRoles)
+router.post('/coments', verifyToken, authorizeRoles("manager", "admin"), createComent);
 
-router.get('/all',getAllComents);
+// Ruta para obtener todos los comentarios
+router.get('/coments', getAllComents);
 
-router.get('/usercoments',verifyToken,getAllUserComents);
+// Ruta para obtener los comentarios del usuario (protegida con verifyToken)
+router.get('/coments/user', verifyToken, getAllUserComents);
 
-router.put('/edit/:id', verifyToken,authorizeRoles("manager","admin"), putFindAndUpdateComent);
+// Ruta para actualizar un comentario (protegida con verifyToken y authorizeRoles)
+router.put('/coments/:id', verifyToken, authorizeRoles("manager", "admin"), putFindAndUpdateComent);
 
-router.delete('/delete/:id',authorizeRoles("manager","admin") , verifyToken, deleteComent);
+// Ruta para eliminar un comentario (protegida con verifyToken y authorizeRoles)
+router.delete('/coments/:id', verifyToken, authorizeRoles("manager", "admin"), deleteComent);
 
 module.exports = router;
+ */
+
+const express = require('express');
+const { createComent, getAllComents, getAllUserComents, putFindAndUpdateComent, deleteComent } = require('../controllers/comentController'); // Usa un solo archivo para los controladores
+const verifyToken = require('../middlewares/authMiddleware');
+const authorizeRoles = require('../middlewares/roleMiddleware');
+const router = express.Router();
+
+// Ruta para crear un comentario (protegida con verifyToken y authorizeRoles)
+router.post('/coments', verifyToken, authorizeRoles("manager", "admin"), createComent);
+
+// Ruta para obtener todos los comentarios
+router.get('/coments', getAllComents);
+
+// Ruta para obtener los comentarios del usuario (protegida con verifyToken)
+router.get('/coments/user', verifyToken, getAllUserComents);
+
+// Ruta para actualizar un comentario (protegida con verifyToken y authorizeRoles)
+router.put('/coments/:id', verifyToken, authorizeRoles("manager", "admin"), putFindAndUpdateComent);
+
+// Ruta para eliminar un comentario (protegida con verifyToken y authorizeRoles)
+router.delete('/coments/:id', verifyToken, authorizeRoles("manager", "admin"), deleteComent);
+
+module.exports = router;
+
