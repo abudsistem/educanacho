@@ -1,0 +1,4 @@
+routes:
+  - type: serve
+    spa: true
+    src: build
