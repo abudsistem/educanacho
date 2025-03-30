@@ -45,10 +45,10 @@ const login = async (req, res) => {
       return res.status(400).json({ errors: validation.error.errors.map(err => err.message) });
     }
 
-    const { usernameOrEmail, password } = validation.data;
+    const { username, password } = validation.data;
 
     const user = await User.findOne({
-      $or: [{ username: usernameOrEmail }, { email: usernameOrEmail }],
+      $or: [{ username: username }, { email: username }],
     });
 
     if (!user) {
@@ -58,7 +58,7 @@ const login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid credentials in password" });
     }
 
     const token = jwt.sign(
