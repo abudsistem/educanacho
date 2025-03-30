@@ -22,5 +22,5 @@ const deleteComent = async (req, res) => {
 };
 
 module.exports = {
-    deleteComent,
+    deleteComent
 };
