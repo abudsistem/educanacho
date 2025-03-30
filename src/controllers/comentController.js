@@ -16,7 +16,7 @@ const createComent = async (req, res) => {
 
         await coment.save();
  
-        const user = await User.findById(req.user._id).select('username');
+        const user = await User.findById(req.user.id).select('username');
         res.status(201).json({
             
             message: 'Coment created successfully',
@@ -24,6 +24,7 @@ const createComent = async (req, res) => {
                 id: coment._id,
                 content: coment.content,
                 createdAt: coment.createdAt,
+                username: user.username, // Incluir el username
             }
 
         });
