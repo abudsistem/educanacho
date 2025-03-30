@@ -15,8 +15,8 @@ router.get('/all',getAllComents);
 
 router.get('/usercoments',verifyToken,getAllUserComents);
 
-router.put('/edit/:id', verifyToken, putFindAndUpdateComent);
+router.put('/edit/:id', verifyToken,authorizeRoles("manager","admin"), putFindAndUpdateComent);
 
-router.delete('/delete/:id',authorizeRoles , verifyToken, deleteComent);
+router.delete('/delete/:id',authorizeRoles("manager","admin") , verifyToken, deleteComent);
 
 module.exports = router;
