@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node src/index.js",
+    "ui:dev": "rm -rf dist && cd ../ && cd frontend/nachoeducaFrontend && npm run build && cp -r dist ../../backend && node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf dist && cd ../ && cd frontend/nachoeducaFrontend && npm run build && cp -r dist ../../backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m 'deploy 4 cambiando la direccion' && git push origin main"
