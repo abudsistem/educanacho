@@ -30,33 +30,3 @@ const verifyToken = (req, res, next) => {
     }
 }
 module.exports = verifyToken;
-
-/*
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
-
-const verifyToken = (req, res, next) => {
-    console.log("Middleware reached");
-    const authHeader = req.headers.authorization || req.headers.Authorization;
-
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-        console.log("No token provided");
-        return res.status(401).json({ message: "Access Denied, no token provided" });
-    }
-
-    const token = authHeader.split(" ")[1];
-
-    try {
-        const decoded = jwt.verify(token, process.env.JSON_WEB_TOKEN_SECRET);
-        req.user = decoded;
-        console.log("Token verified:", decoded);
-        next();
-    } catch (err) {
-        console.log("Invalid token:", err.message);
-        return res.status(401).json({ message: "Invalid token", error: err.message });
-    }
-};
-
-module.exports = verifyToken;
-
-*/

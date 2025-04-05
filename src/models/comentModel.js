@@ -9,7 +9,7 @@ const comentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
-        maxlength: 200,
+        maxlength: 5000,
     },
     createdAt:{
         type: Date,

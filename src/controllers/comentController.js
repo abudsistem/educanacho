@@ -61,7 +61,6 @@ const getAllUserComents = async (req, res) => {
     }
 }; 
 
-
 const putFindAndUpdateComent = async (req,res) => {
     try {
         const { content } = req.body;
@@ -94,7 +93,6 @@ const putFindAndUpdateComent = async (req,res) => {
         res.status(500).json({ message: 'Error updating comment', error: error.message });
     }
 }
-
 
 const deleteComent = async (req, res) => {
     try {
